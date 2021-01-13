@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app:
+    # build section context set to current directory
+    build:
+      context: .
+    # map port 8000 on localhost to 8000 on image
+    ports:
+      - "8000:8000"
+    # map volume ./app on localhost to /app on image
+    volumes:
+      - ./app:/app
+    # command that runs the app in our docker container (> allows multi-line)
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
