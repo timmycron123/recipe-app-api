@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.7"
+
+# only require docker, everything else contained within our docker container
+services:
+  - docker
+
+# run before executing any of the execution commands to follow
+before_script: pip install docker-compose
+
+# run tests and linting tool within our docker container
+script:
+  - docker-compose run app sh -c "python manage.py test && flake8"
