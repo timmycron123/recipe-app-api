@@ -1,2 +1,3 @@
 # recipe-app-api
-Recipe app
+
+Herein lies code from a tutorial to practice some Django development.
